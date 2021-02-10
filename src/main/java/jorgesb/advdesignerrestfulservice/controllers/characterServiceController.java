@@ -67,7 +67,7 @@ public class characterServiceController {
     public HttpStatus deleteCharacterById(@PathVariable("code") Long code)
             throws RecordNotFoundException {
         service.deleteCharacterById(code);
-        return HttpStatus.ACCEPTED;
+        return HttpStatus.FORBIDDEN;
     }
 
 }

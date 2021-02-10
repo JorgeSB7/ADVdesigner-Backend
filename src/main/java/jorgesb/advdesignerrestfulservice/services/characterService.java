@@ -80,9 +80,10 @@ public class characterService {
     // Borramos el personaje por id pasado
     public void deleteCharacterById(Long code) throws RecordNotFoundException {
         Optional<character> character = repository.findById(code);
-
+        System.out.println(character);
         if (character.isPresent()) {
-            repository.deleteById(code);
+            System.out.println(code);
+            repository.deleteFromCharacter(code);
         } else {
             throw new RecordNotFoundException("No character record exist for given id", code);
         }
@@ -90,8 +91,9 @@ public class characterService {
 
     // Buscar por nombre de personaje
     public List<character> getCharactersByName(String namecharacter) {
+        System.out.println(namecharacter);
         List<character> characterList = repository.getByName(namecharacter);
-
+        
         if (characterList.size() > 0) {
             return characterList;
         } else {

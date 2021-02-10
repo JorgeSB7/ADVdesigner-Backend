@@ -71,9 +71,10 @@ public class campaignService {
     // Borramos la campaña por id pasado
     public void deleteCampaignById(Long cdcam) throws RecordNotFoundException {
         Optional<campaign> campaign = repository.findById(cdcam);
-
+        System.out.println(campaign);
         if (campaign.isPresent()) {
-            repository.deleteById(cdcam);
+            System.out.println(cdcam);
+            repository.deleteFromCampaign(cdcam);
         } else {
             throw new RecordNotFoundException("No campaign record exist for given id", cdcam);
         }
