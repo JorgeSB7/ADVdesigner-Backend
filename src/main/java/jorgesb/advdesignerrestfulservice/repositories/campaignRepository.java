@@ -13,6 +13,6 @@ public interface campaignRepository extends JpaRepository<campaign, Long> {
     @Query(value = "SELECT * FROM campaigns AS i WHERE i.namecampaign LIKE %?1%", nativeQuery = true)
     public List<campaign> getByName(String namecampaign);
     
-    @Query(value = "DELETE FROM campaigns AS i WHERE i.code = ?1 RETURNING cdcam", nativeQuery = true)
-    public Long deleteFromCampaign (Long cdcam);
+    /* @Query(value = "DELETE FROM campaigns AS i WHERE i.code = ?1 RETURNING cdcam", nativeQuery = true)
+    public Long deleteFromCampaign (Long cdcam); */
 }

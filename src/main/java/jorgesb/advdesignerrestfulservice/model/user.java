@@ -1,6 +1,7 @@
 package jorgesb.advdesignerrestfulservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -33,7 +34,7 @@ public class user {
     private String email;
 
     @NotBlank
-    @Column(name = "avatar")
+    @Column(name = "avatar", columnDefinition="TEXT")
     private String avatar;
 
     @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -46,6 +47,9 @@ public class user {
     }
 
     public void setCha(List<character> cha) {
+        if (cha == null) {
+            cha = new ArrayList<character>();
+        }
         this.lcha = cha;
         for (character character : cha) {
             character.setCreator(this);

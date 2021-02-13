@@ -40,32 +40,33 @@ public class character {
     @NotBlank
     @Column(name = "rolclass")
     private String rolclass;
-
+    
+    // Añadimos el columnDefinition="TEXT" para poder guardar las imágenes en base64
     @NotBlank
-    @Column(name = "image")
+    @Column(name = "image", columnDefinition="TEXT")
     private String image;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "strength")
     private int strength;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "dexterity")
     private int dexterity;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "constitution")
     private int constitution;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "intelligence")
     private int intelligence;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "wisdom")
     private int wisdom;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "charisma")
     private int charisma;
 
@@ -106,6 +107,9 @@ public class character {
     }
 
     public void setCampaigns(List<campaign> campaigns) {
+        if (campaigns == null) {
+            campaigns = new ArrayList<campaign>();
+        }
         this.campaigns = campaigns;
         for (campaign campaign : campaigns) {
             List<character> list = campaign.getCha();

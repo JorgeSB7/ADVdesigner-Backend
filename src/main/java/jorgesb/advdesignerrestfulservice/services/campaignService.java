@@ -74,7 +74,7 @@ public class campaignService {
         System.out.println(campaign);
         if (campaign.isPresent()) {
             System.out.println(cdcam);
-            repository.deleteFromCampaign(cdcam);
+            repository.deleteById(cdcam);
         } else {
             throw new RecordNotFoundException("No campaign record exist for given id", cdcam);
         }

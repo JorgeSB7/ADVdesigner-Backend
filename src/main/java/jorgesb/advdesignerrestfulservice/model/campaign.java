@@ -27,7 +27,7 @@ public class campaign {
     private String namecampaign;
 
     @NotBlank
-    @Column(name = "picture")
+    @Column(name = "picture", columnDefinition="TEXT")
     private String picture;
 
     @NotBlank
