@@ -55,6 +55,7 @@ public class userService {
                 //newEntity.setId(entity.getId());
                 newEntity.setName(entity.getName());
                 newEntity.setEmail(entity.getEmail());
+                newEntity.setPassword(entity.getPassword());
                 newEntity.setAvatar(entity.getAvatar());
 
                 newEntity = repository.save(newEntity);
@@ -87,6 +88,24 @@ public class userService {
             return userList;
         } else {
             return new ArrayList<user>();
+        }
+    }
+    
+    public user searchCount(String email, String password){
+        user p= repository.searchCount(email,password);
+        if(p!=null){
+            return p;
+        }else{
+            return new user();
+        }
+    }
+    
+    public user searchEmail(String email){
+        user p= repository.searchEmail(email);
+        if(p!=null){
+            return p;
+        }else{
+            return new user();
         }
     }
 }

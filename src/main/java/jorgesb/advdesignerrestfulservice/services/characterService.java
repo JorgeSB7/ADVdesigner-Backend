@@ -27,6 +27,17 @@ public class characterService {
             return new ArrayList<character>();
         }
     }
+    
+    // Devuelve todos los personajes de un usuario
+    public List<character> getAllCharacterByIdUser(Long id) {
+        List<character> characterList = repository.getAllCharacterByIdUser(id);
+
+        if (characterList.size() > 0) {
+            return characterList;
+        } else {
+            return new ArrayList<character>();
+        }
+    }
 
     // Devuelve el personaje por el id pasado
     public character getCharacterById(Long code) throws RecordNotFoundException {
@@ -93,6 +104,18 @@ public class characterService {
     public List<character> getCharactersByName(String namecharacter) {
         System.out.println(namecharacter);
         List<character> characterList = repository.getByName(namecharacter);
+        
+        if (characterList.size() > 0) {
+            return characterList;
+        } else {
+            return new ArrayList<character>();
+        }
+    }
+    
+    // Buscar por nombre de personaje, dado un usuario
+    public List<character> getCharactersByName(String namecharacter, Long code) {
+        System.out.println(namecharacter);
+        List<character> characterList = repository.getByNameFromUser(namecharacter, code);
         
         if (characterList.size() > 0) {
             return characterList;

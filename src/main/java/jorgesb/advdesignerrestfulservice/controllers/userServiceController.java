@@ -69,5 +69,19 @@ public class userServiceController {
         service.deleteUserById(id);
         return HttpStatus.ACCEPTED;
     }
+    
+    @GetMapping("/search/{email}/{password}")
+    public ResponseEntity<user> getItemsByCount(@PathVariable("email") String email,@PathVariable("password") String password) {
+        user count = service.searchCount(email, password);
+ 
+        return new ResponseEntity<user>(count, new HttpHeaders(), HttpStatus.OK);
+    }
+    
+     @GetMapping("/searching/{email}")
+    public ResponseEntity<user> getItemsByEmail(@PathVariable("email") String email) {
+        user count = service.searchEmail(email);
+ 
+        return new ResponseEntity<user>(count, new HttpHeaders(), HttpStatus.OK);
+    }
 
 }

@@ -33,6 +33,13 @@ public class characterServiceController {
 
         return new ResponseEntity<List<character>>(list, new HttpHeaders(), HttpStatus.OK);
     }
+    
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<character>> getAllCharacterByIdUser(@PathVariable("id") Long id) {
+        List<character> list = service.getAllCharacterByIdUser(id);
+
+        return new ResponseEntity<List<character>>(list, new HttpHeaders(), HttpStatus.OK);
+    }
 
     @GetMapping("/{code}")
     public ResponseEntity<character> getCharacterById(@PathVariable("code") Long code)
@@ -50,6 +57,13 @@ public class characterServiceController {
         return new ResponseEntity<List<character>>(list, new HttpHeaders(), HttpStatus.OK);
     }
     
+    @GetMapping("/search/{namecharacter}/user/{id}")
+    public ResponseEntity<List<character>> getCharactersByName(@PathVariable("namecharacter") String namecharacter, @PathVariable("id") Long id) {
+        List<character> list = service.getCharactersByName(namecharacter, id);
+
+        return new ResponseEntity<List<character>>(list, new HttpHeaders(), HttpStatus.OK);
+    }
+    
     @PostMapping
     public ResponseEntity<character> createCharacter(@Valid @RequestBody character myCharacter) {
         character created = service.createCharacter(myCharacter);
@@ -59,6 +73,7 @@ public class characterServiceController {
     @PutMapping
     public ResponseEntity<character> UpdateCharacter(@Valid @RequestBody character myCharacter)
             throws RecordNotFoundException {
+        System.out.println(myCharacter);
         character updated = service.UpdateCharacter(myCharacter);
         return new ResponseEntity<character>(updated, new HttpHeaders(), HttpStatus.OK);
     }

@@ -26,7 +26,6 @@ public class campaign {
     @Column(name = "namecampaign")
     private String namecampaign;
 
-    @NotBlank
     @Column(name = "picture", columnDefinition="TEXT")
     private String picture;
 

@@ -42,7 +42,6 @@ public class character {
     private String rolclass;
     
     // Añadimos el columnDefinition="TEXT" para poder guardar las imágenes en base64
-    @NotBlank
     @Column(name = "image", columnDefinition="TEXT")
     private String image;
 

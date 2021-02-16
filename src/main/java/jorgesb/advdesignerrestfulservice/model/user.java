@@ -32,6 +32,25 @@ public class user {
     @NotBlank
     @Column(name = "email")
     private String email;
+    
+    @Column(name = "password")
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<character> getLcha() {
+        return lcha;
+    }
+
+    public void setLcha(List<character> lcha) {
+        this.lcha = lcha;
+    }
 
     @NotBlank
     @Column(name = "avatar", columnDefinition="TEXT")
