@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-63-34-97-163.eu-west-1.compute.amazonaws.com:5432/dc722o1i9ca56n
-    username: lkcwpwqzizapmr
-    password: 24848ee43bfc89cc56aaee0601a577c074c98de203cfec3670177ae0d885c0c8
+    url: jdbc:postgresql://localhost:5432/ADVdesignerBD
+    username: postgres
+    password: 1234abcd
     pool-size: 30
   jpa:
     show-sql: true
@@ -12,4 +12,4 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
-    generate-ddl: true
+    generate-ddl: true 

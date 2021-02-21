@@ -29,8 +29,7 @@ public class campaign {
     @Column(name = "picture", columnDefinition="TEXT")
     private String picture;
 
-    @NotBlank
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition="TEXT")
     private String description;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "campaigns")
