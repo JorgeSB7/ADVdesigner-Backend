@@ -56,6 +56,7 @@ public class campaignService {
                 newEntity.setNamecampaign(entity.getNamecampaign());
                 newEntity.setPicture(entity.getPicture());
                 newEntity.setDescription(entity.getDescription());
+                newEntity.setCam(entity.getCha());
 
                 newEntity = repository.save(newEntity);
 

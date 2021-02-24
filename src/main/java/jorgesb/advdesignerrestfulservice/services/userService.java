@@ -57,6 +57,7 @@ public class userService {
                 newEntity.setEmail(entity.getEmail());
                 newEntity.setPassword(entity.getPassword());
                 newEntity.setAvatar(entity.getAvatar());
+                newEntity.setCha(entity.getCha());
 
                 newEntity = repository.save(newEntity);
 

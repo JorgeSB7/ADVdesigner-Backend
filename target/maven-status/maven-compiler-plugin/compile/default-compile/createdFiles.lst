@@ -5,6 +5,7 @@ jorgesb\advdesignerrestfulservice\services\campaignService.class
 jorgesb\advdesignerrestfulservice\model\character.class
 jorgesb\advdesignerrestfulservice\AppMain.class
 jorgesb\advdesignerrestfulservice\repositories\userRepository.class
+jorgesb\advdesignerrestfulservice\Swagger\SwaggerConfig.class
 jorgesb\advdesignerrestfulservice\repositories\campaignRepository.class
 jorgesb\advdesignerrestfulservice\repositories\characterRepository.class
 jorgesb\advdesignerrestfulservice\services\characterService.class

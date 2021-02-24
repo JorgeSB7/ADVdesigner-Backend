@@ -76,6 +76,8 @@ public class characterService {
                 newEntity.setIntelligence(entity.getIntelligence());
                 newEntity.setWisdom(entity.getWisdom());
                 newEntity.setCharisma(entity.getCharisma());
+                newEntity.setCreator(entity.getCreator());
+                newEntity.setCampaigns(entity.getCampaigns());
 
                 newEntity = repository.save(newEntity);
 
