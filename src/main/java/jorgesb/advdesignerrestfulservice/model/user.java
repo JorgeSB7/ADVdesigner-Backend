@@ -77,7 +77,7 @@ public class user {
     }
     
     //_____________________________________________Bestiario
-    
+    /*
     public List<beast> getLbea() {
         return lbea;
     }
@@ -104,9 +104,9 @@ public class user {
             beast.setCreatorb(this);
         }
     }
-    
+    */
     //_____________________________________________Magias
-    
+    /*
     public List<magic> getLmag() {
         return lmag;
     }
@@ -133,7 +133,7 @@ public class user {
             magic.setCreatorm(this);
         }
     }
-    
+    */
     //_________________________________________________getter/setter
 
     public Long getId() {
