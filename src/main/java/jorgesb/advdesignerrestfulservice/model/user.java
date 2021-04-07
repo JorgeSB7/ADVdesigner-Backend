@@ -43,7 +43,8 @@ public class user {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    
+    //_____________________________________________Personajes
     public List<character> getLcha() {
         return lcha;
     }
@@ -74,6 +75,66 @@ public class user {
             character.setCreator(this);
         }
     }
+    
+    //_____________________________________________Bestiario
+    
+    public List<beast> getLbea() {
+        return lbea;
+    }
+
+    public void setLbea(List<beast> lbea) {
+        this.lbea = lbea;
+    }
+
+    @OneToMany(mappedBy = "creatorb", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnoreProperties("creatorb")
+    private List<beast> lbea;
+
+    public List<beast> getBea() {
+        return lbea;
+    }
+
+    public void setBea(List<beast> bea) {
+        if (bea == null) {
+            bea = new ArrayList<beast>();
+        }
+        this.lbea = bea;
+        for (beast beast : bea) {
+            beast.setCreatorb(this);
+        }
+    }
+    
+    //_____________________________________________Magias
+    
+    public List<magic> getLmag() {
+        return lmag;
+    }
+
+    public void setLmag(List<magic> lmag) {
+        this.lmag = lmag;
+    }
+
+    @OneToMany(mappedBy = "creatorm", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnoreProperties("creatorm")
+    private List<magic> lmag;
+
+    public List<magic> getMag() {
+        return lmag;
+    }
+
+    public void setMag(List<magic> mag) {
+        if (mag == null) {
+            mag = new ArrayList<magic>();
+        }
+        this.lmag = mag;
+        for (magic magic : mag) {
+            magic.setCreatorm(this);
+        }
+    }
+    
+    //_________________________________________________getter/setter
 
     public Long getId() {
         return id;
