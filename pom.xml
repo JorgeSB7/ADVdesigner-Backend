@@ -84,7 +84,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.carlosserrano.apirestfulservice.AppMain</mainClass>
+                            <mainClass>jorgesb.advdesignerrestfulservice.AppMain</mainClass>
                         </manifest>                      
                     </archive>
                 </configuration>
