@@ -22,7 +22,9 @@ public class magic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codem;
-
+    
+    
+    /*
     @NotBlank
     @Column(name = "namemagic")
     private String namemagic;
@@ -120,5 +122,7 @@ public class magic {
     public String toString() {
         return "magic{" + "codem=" + codem + ", namemagic=" + namemagic + ", typem=" + typem + ", lorem=" + lorem + ", imagem=" + imagem + ", energy=" + energy + '}';
     }
+
+*/
     
 }
