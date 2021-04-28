@@ -24,7 +24,6 @@ public class beast {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codeb;
     
-    /*
 
     @NotBlank
     @Column(name = "namebeast")
@@ -134,6 +133,6 @@ public class beast {
     public String toString() {
         return "beast{" + "codeb=" + codeb + ", namebeast=" + namebeast + ", type=" + type + ", lore=" + lore + ", imageb=" + imageb + ", power=" + power + ", life=" + life + '}';
     }
-*/
+
     
 }

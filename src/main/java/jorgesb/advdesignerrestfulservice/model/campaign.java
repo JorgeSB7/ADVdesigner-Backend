@@ -3,7 +3,6 @@ package jorgesb.advdesignerrestfulservice.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -88,6 +87,20 @@ public class campaign {
     @Override
     public String toString() {
         return "campaign{" + "cdcam=" + cdcam + ", namecampaign=" + namecampaign + ", picture=" + picture + ", description=" + description + '}';
+    }
+    
+    //______________________________________________
+    
+    @NotBlank
+    @Column(name = "contras")
+    private long contras;
+
+    public long getContras() {
+        return contras;
+    }
+
+    public void setContras(long contras) {
+        this.contras = contras;
     }
 
 }

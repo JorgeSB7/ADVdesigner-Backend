@@ -60,7 +60,7 @@ public class characterServiceController {
         return new ResponseEntity<List<character>>(list, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "getCharacterById", notes = "Esta funcion nos devuelve un de personaje por code pasado, mas una respuesta HTTP completa")
+    @ApiOperation(value = "getCharacterById", notes = "Esta funcion nos devuelve un personaje por code pasado, mas una respuesta HTTP completa")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "OK. El recurso se obtiene correctamente", response = character.class),
         @ApiResponse(code = 400, message = "Bad Request"),
