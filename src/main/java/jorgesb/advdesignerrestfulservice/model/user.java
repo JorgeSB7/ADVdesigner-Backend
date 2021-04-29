@@ -3,7 +3,6 @@ package jorgesb.advdesignerrestfulservice.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -44,6 +45,12 @@ public class user {
         this.password = password;
     }
     
+
+
+    @NotBlank
+    @Column(name = "avatar", columnDefinition="TEXT")
+    private String avatar;
+    
     //_____________________________________________Personajes
     public List<character> getLcha() {
         return lcha;
@@ -52,10 +59,6 @@ public class user {
     public void setLcha(List<character> lcha) {
         this.lcha = lcha;
     }
-
-    @NotBlank
-    @Column(name = "avatar", columnDefinition="TEXT")
-    private String avatar;
 
     @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -76,6 +79,7 @@ public class user {
         }
     }
     
+    
     //_____________________________________________Bestiario
     
     public List<beast> getLbea() {
@@ -86,7 +90,8 @@ public class user {
         this.lbea = lbea;
     }
 
-    @OneToMany(mappedBy = "creatorb", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "creatorb", cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties("creatorb")
     private List<beast> lbea;
@@ -115,7 +120,8 @@ public class user {
         this.lmag = lmag;
     }
 
-    @OneToMany(mappedBy = "creatorm", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "creatorm", cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties("creatorm")
     private List<magic> lmag;

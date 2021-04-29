@@ -23,8 +23,7 @@ public class beast {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codeb;
-    
-
+   
     @NotBlank
     @Column(name = "namebeast")
     private String namebeast;

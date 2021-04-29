@@ -9,7 +9,9 @@ import jorgesb.advdesignerrestfulservice.model.magic;
 import jorgesb.advdesignerrestfulservice.repositories.magicRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class magicService {
     @Autowired
     magicRepository repository;
