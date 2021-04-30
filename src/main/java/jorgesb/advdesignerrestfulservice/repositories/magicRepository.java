@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface magicRepository extends JpaRepository<magic, Long> {
     
-    @Query(value = "SELECT * FROM magics AS i WHERE i.creatorm=?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM magics AS i WHERE i.idcreatorm=?1", nativeQuery = true)
     public List<magic> getAllMagicByIdUser(Long codem);
 
     @Query(value = "SELECT * FROM magics AS i WHERE i.namemagic LIKE %?1%", nativeQuery = true)
