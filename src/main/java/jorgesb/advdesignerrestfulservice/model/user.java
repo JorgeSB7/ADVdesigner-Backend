@@ -90,8 +90,8 @@ public class user {
         this.lbea = lbea;
     }
 
-    @OneToMany(mappedBy = "creatorb", cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy = "creatorb", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@LazyCollection(LazyCollectionOption.FALSE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties("creatorb")
     private List<beast> lbea;
@@ -120,8 +120,8 @@ public class user {
         this.lmag = lmag;
     }
 
-    @OneToMany(mappedBy = "creatorm", cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy = "creatorm", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@LazyCollection(LazyCollectionOption.FALSE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties("creatorm")
     private List<magic> lmag;
