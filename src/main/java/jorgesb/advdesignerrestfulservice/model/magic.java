@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name = "magics")
@@ -45,6 +47,7 @@ public class magic {
     
     @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER)
+    //@LazyCollection(LazyCollectionOption.FALSE)
     @JoinColumn(name = "idcreatorm")
     @JsonIgnoreProperties("lmag")
     private user creatorm;

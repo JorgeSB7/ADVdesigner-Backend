@@ -91,7 +91,7 @@ public class user {
     }
 
     @OneToMany(mappedBy = "creatorb", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //@LazyCollection(LazyCollectionOption.FALSE)
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties("creatorb")
     private List<beast> lbea;
@@ -121,7 +121,7 @@ public class user {
     }
 
     @OneToMany(mappedBy = "creatorm", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //@LazyCollection(LazyCollectionOption.FALSE)
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties("creatorm")
     private List<magic> lmag;
