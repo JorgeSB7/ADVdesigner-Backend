@@ -46,7 +46,6 @@ public class user {
     }
     
 
-
     @NotBlank
     @Column(name = "avatar", columnDefinition="TEXT")
     private String avatar;

@@ -3,8 +3,10 @@ package jorgesb.advdesignerrestfulservice.controllers;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+
 import java.util.List;
 import javax.validation.Valid;
+
 import jorgesb.advdesignerrestfulservice.exceptions.RecordNotFoundException;
 import jorgesb.advdesignerrestfulservice.model.magic;
 import jorgesb.advdesignerrestfulservice.services.magicService;

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class beastService {
-    
     @Autowired
     beastRepository repository;
     
