@@ -91,7 +91,7 @@ public class campaign {
     
     //______________________________________________
     
-    @NotBlank
+    //@NotBlank
     @Column(name = "contras")
     private long contras;
 
