@@ -57,7 +57,7 @@ public class campaignService {
                 newEntity.setPicture(entity.getPicture());
                 newEntity.setDescription(entity.getDescription());
                 newEntity.setCam(entity.getCha());
-                newEntity.setContras(entity.getContras());
+                //newEntity.setContras(entity.getContras());
 
                 newEntity = repository.save(newEntity);
 
